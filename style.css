@@ -3,6 +3,12 @@ html{
 }
 
 body{
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.lotw-interactive-container{
     max-width: 800px;
     margin: 0 auto;
 }
@@ -23,8 +29,11 @@ body{
 .lotw-interactive-descript{
     background-color: #fff;
     box-shadow: 4px 4px 24px 4px rgba(0,0,0,0.4);
-    padding: 12px;
-    max-width: 400px;
+    padding: 20px;
+    width: 500px;
+    box-sizing: border-box;
+    max-width: 100vw;
+    transform: translateX(-50%);
     display: none;
 }
 
@@ -33,6 +42,7 @@ body{
     height: 96px;
     border: 4px solid rgba(255,255,255,0.8);
     border-radius: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .lotw-interactive-marker:hover{
@@ -42,4 +52,10 @@ body{
 
 .lotw-interactive-marker.selected{
     background-color: rgba(0,0,0,0.5);
+}
+
+.lotw-interactive-close{
+    text-align: right;
+    cursor: pointer;
+    text-transform: uppercase;
 }
