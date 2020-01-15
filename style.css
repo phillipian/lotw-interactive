@@ -1,0 +1,45 @@
+html{
+    background-color: #eee /* FOR DEMONSTRATION PURPOSES */
+}
+
+body{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.lotw-interactive-container img{
+    width: 100%;
+}
+
+.lotw-interactive-container{
+    position: relative;
+}
+
+.lotw-interactive-marker, .lotw-interactive-descript{
+    position: absolute;
+    top: 0;
+}
+
+.lotw-interactive-descript{
+    background-color: #fff;
+    box-shadow: 4px 4px 24px 4px rgba(0,0,0,0.4);
+    padding: 12px;
+    max-width: 400px;
+    display: none;
+}
+
+.lotw-interactive-marker{
+    width: 96px;
+    height: 96px;
+    border: 4px solid rgba(255,255,255,0.8);
+    border-radius: 50%;
+}
+
+.lotw-interactive-marker:hover{
+    background-color: rgba(255,255,255,0.6);
+    cursor: pointer;
+}
+
+.lotw-interactive-marker.selected{
+    background-color: rgba(0,0,0,0.5);
+}

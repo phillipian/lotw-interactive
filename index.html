@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='style.css'>
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class='lotw-interactive-container'>
+            <div class='lotw-interactive-image'>
+                <img src='jason-demo.jpg'>
+            </div>
+            <div class='lotw-interactive-marker' data-ind='1' style='left: 25%; top: 42.5%;'></div>
+            <div class='lotw-interactive-marker' data-ind='2' style='left: 66%; top: 60%;'></div>
+            <div class='lotw-interactive-marker' data-ind='3' style='left: 72%; top: 35%;'></div>
+            <div class='lotw-interactive-descript' data-ind='1'>
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Yamaha_657_CSG_30.jpg/640px-Yamaha_657_CSG_30.jpg'>
+                <p>The clarinet is a family of woodwind instruments. It has a single-reed mouthpiece, a straight, cylindrical tube with an almost cylindrical bore, and a flared bell. A person who plays a clarinet is called a clarinetist (sometimes spelled clarinettist). (Wikipedia)</p>
+            </div>
+            <div class='lotw-interactive-descript' data-ind='2'>
+                <p>The word clarinet may have entered the English language via the French clarinette (the feminine diminutive of Old French clarin or clarion), or from Provençal clarin, "oboe".</p>
+            </div>
+            <div class='lotw-interactive-descript' data-ind='3'>
+                <p>Huang County, former county in Shandong, China, current Longkou City
+                Yellow River, or Huang River, in China
+                Huangshan, mountain range in Anhui, China
+                Huang (state), state in ancient China.
+                Hwang River, in Gyeongsangnam-do, South Korea</p>
+            </div>
+        </div>
+        <script>
+        $(document).ready(function(){
+            $(".lotw-interactive-descript").hide();
+            currentIndex = 0;
+        });
+
+        $(".lotw-interactive-marker").on('click', function(){
+            $this = $(this);
+            index = $this.attr('data-ind');
+            console.log(index);
+            if (index != currentIndex){
+                currentIndex = index;
+                $(".lotw-interactive-marker").removeClass("selected");
+                $this.addClass("selected");
+                $(".lotw-interactive-descript").hide();
+                selector = ".lotw-interactive-descript[data-ind='" + index + "']";
+                $(selector).show();
+            }
+        });
+        </script>
+    </body>
+</html>
